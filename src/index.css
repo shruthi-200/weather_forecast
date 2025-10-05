@@ -1,0 +1,38 @@
+/* Fix date input styling */
+input[type="date"] {
+  color-scheme: dark;
+  position: relative;
+}
+
+/* Hide the default placeholder for date input */
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+
+/* Show our custom placeholder when empty */
+input[type="date"]:not(:focus):invalid::before {
+  content: attr(placeholder);
+  color: #9CA3AF;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Ensure text is visible when date is selected */
+input[type="date"]:valid,
+input[type="date"]:focus {
+  color: white;
+}
+
+/* Global placeholder styling */
+input::placeholder {
+  color: #9CA3AF;
+  opacity: 1;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
